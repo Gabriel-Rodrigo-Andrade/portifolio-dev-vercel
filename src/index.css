@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-neon: #0075FF;
+  --color-void: #0A0A0A;
+  --color-sheet: #121212;
+  --color-line: #222222;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-void);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+    color: white;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    background: var(--color-void);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+  }
+}
+
+@layer utilities {
+  .text-crt {
+    -webkit-mask-image: repeating-linear-gradient(
+      to bottom,
+      #000 0px,
+      #000 2px,
+      rgba(0, 0, 0, 0.85) 2px,
+      rgba(0, 0, 0, 0.85) 3px
+    );
+    mask-image: repeating-linear-gradient(
+      to bottom,
+      #000 0px,
+      #000 2px,
+      rgba(0, 0, 0, 0.85) 2px,
+      rgba(0, 0, 0, 0.85) 3px
+    );
+  }
+
+  .tech-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .scanlines {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.1) 50%
+    ), linear-gradient(
+      90deg, 
+      rgba(255, 0, 0, 0.02), 
+      rgba(0, 117, 255, 0.02), 
+      rgba(0, 0, 255, 0.02)
+    );
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+
+  .brutal-card {
+    background: var(--color-sheet);
+    border: 1px solid var(--color-line);
+    transition: all 0.2s linear;
+  }
+
+  .brutal-card:hover {
+    border-color: var(--color-neon);
+    background: #181818;
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px var(--color-neon);
+  }
+}
