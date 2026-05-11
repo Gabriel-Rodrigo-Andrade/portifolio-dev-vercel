@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { TECH_STACK } from '../constants.tsx';
-import { Hash } from 'lucide-react';
+import { TechIcon } from './TechIcon';
 
 export default function Stack() {
   const groupedStack = TECH_STACK.reduce((acc, item) => {
@@ -73,7 +73,7 @@ export default function Stack() {
                   className="group/item flex items-center gap-3 p-3 border border-line hover:border-neon transition-all bg-void cursor-default relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-neon/5 translate-y-full group-hover/item:translate-y-0 transition-transform duration-200" />
-                  <Hash size={12} className="text-white/20 group-hover/item:text-neon transition-colors relative z-10" />
+                  <TechIcon name={item.icon} className="relative z-10" />
                   <div className="flex-1 flex justify-between items-center relative z-10">
                     <span className="text-sm font-mono uppercase tracking-tight text-white/80 group-hover/item:text-white transition-colors">{item.name}</span>
                     <span className="font-mono text-[9px] text-white/20 group-hover/item:text-neon uppercase tracking-widest">{`[0${itemIndex + 1}]`}</span>

@@ -134,7 +134,10 @@ export default function Services() {
           <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.2em]">05_SVC_CAPABILITIES</span>
         </div>
         <div className="md:col-span-3 p-8 flex items-center justify-between">
-           <h3 className="text-crt text-3xl font-black uppercase tracking-tighter">Engineered Solutions</h3>
+           <div className="flex items-center gap-4 text-neon">
+             <span className="w-10 h-[1px] bg-neon" />
+             <h2 className="font-mono text-xs font-bold uppercase tracking-widest">Engineered Solutions</h2>
+           </div>
            <div className="hidden md:flex items-center gap-2 text-white/20 font-mono text-[10px]">
              <Search size={12} className="animate-pulse text-neon" />
              <span>QUERYING_METHODS...</span>
@@ -169,7 +172,7 @@ export default function Services() {
               {iconMap[service.icon as keyof typeof iconMap] || <WebSystemsIcon />}
             </div>
             
-            <h4 className="text-2xl font-bold uppercase tracking-tight mb-4 group-hover:text-neon transition-colors relative z-10">
+            <h4 className="text-highlight-texture text-2xl uppercase mb-4 transition-all duration-300">
               {service.title}
             </h4>
             

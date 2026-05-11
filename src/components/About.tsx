@@ -1,11 +1,39 @@
 import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { ChevronRight } from 'lucide-react';
 
 export default function About() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const experiences = [
+    {
+      role: "Desenvolvedor Full Stack",
+      company: "Freelance & Projetos Próprios",
+      period: "2023 - Presente",
+      description: "Desenvolvimento de sistemas personalizados com foco em PHP, Laravel, Vue.js e integrações de API. Especialista em automação de processos e criação de interfaces dinâmicas.",
+      status: "ATUAL"
+    },
+    {
+      role: "Líder de Suporte Técnico (N2)",
+      company: "TI & Infraestrutura",
+      period: "2021 - 2023",
+      description: "Liderança de equipe técnica, resolução de problemas complexos de infraestrutura e otimização de fluxos de suporte.",
+      status: "LOG"
+    },
+    {
+      role: "Suporte Técnico (N1)",
+      company: "Atendimento Técnico",
+      period: "2020 - 2021",
+      description: "Diagnóstico e resolução de incidentes técnicos, suporte ao usuário final e manutenção de hardware/software.",
+      status: "ROOT"
+    }
+  ];
+
   return (
-    <section id="about" className="bg-void border-x border-line max-w-[1600px] mx-auto overflow-hidden mt-32">
+    <section id="about" className="bg-void border-x border-line max-w-[1600px] mx-auto mt-32">
       <div className="grid grid-cols-1 md:grid-cols-4 border-b border-line">
         <div className="p-8 border-r border-line flex items-center">
-          <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.2em]">03_SYSTEM_LOGS</span>
+          <span className="font-mono text-[10px] text-white/30 uppercase block tracking-[0.2em]">03_SYSTEM_LOGS</span>
         </div>
         <div className="md:col-span-3 p-8">
            <div className="flex items-center gap-4 text-neon">
@@ -15,70 +43,91 @@ export default function About() {
         </div>
       </div>
 
-      <div className="border-b border-line relative bg-sheet/10">
-        <div className="absolute inset-0 tech-grid opacity-20 pointer-events-none" />
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="p-8 md:p-24 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10"
-        >
-          {/* Section: Philosophy / Intro */}
+      <div className="flex flex-col lg:flex-row items-start relative bg-void" ref={containerRef}>
+        {/* Left Column: Philosophy (Sticky Context) */}
+        <div className="w-full lg:w-1/2 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)] p-8 md:p-24 border-b lg:border-b-0 lg:border-r border-line flex flex-col justify-center bg-void z-20">
           <motion.div 
-            whileHover={{ x: 10 }}
-            className="space-y-6 transition-transform border-l-4 border-transparent hover:border-neon pl-6 md:pl-10 -ml-6 md:-ml-10"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6 border-l-4 border-neon pl-6 md:pl-10"
           >
             <span className="font-mono text-[10px] text-neon uppercase block tracking-widest">_Philosophy</span>
-            <p className="text-crt text-3xl lg:text-5xl font-black leading-[1.1] uppercase tracking-tighter">
-              Soluções <span className="text-neon">eficientes</span> para problemas reais.
+            <p className="text-highlight-texture text-3xl lg:text-5xl uppercase transition-all duration-300">
+              Transformando <span className="text-highlight-texture-neon">ideias</span> em realidade digital.
             </p>
-            <p className="text-xl text-white/60 font-light leading-relaxed mt-6">
-              Sou desenvolvedor web focado na entrega de aplicações escaláveis, desde a definição da regra de negócio até a interface final. Especialista em PHP (Laravel e Zend), construindo sistemas robustos com integrações REST/SOAP e processamento assíncrono.
+            <p className="text-lg text-white/60 font-light leading-relaxed mt-6">
+              Sou desenvolvedor Full Stack com sólida experiência em PHP, Vue.js e ecossistemas web modernos. Meu foco é construir aplicações que não apenas funcionam, mas que resolvem problemas reais com eficiência e performance. 
             </p>
           </motion.div>
 
-          <div className="flex flex-col gap-12 lg:border-l lg:border-line lg:pl-16">
-            {/* Section: Experience (First on right column) */}
-            <motion.div 
-              whileHover={{ x: 10 }}
-              className="space-y-4 transition-transform"
-            >
-              <span className="font-mono text-[10px] text-white/40 uppercase block tracking-widest">_Work_Experience</span>
-              <div className="space-y-2">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-neon transition-colors">K13 Agência Web</h3>
-                  <span className="font-mono text-[10px] text-neon border border-neon/30 px-2 py-0.5 mt-1 tracking-widest">ATUAL</span>
-                </div>
-                <div className="font-mono text-xs text-neon/70">Desenvolvedor Web | Mai 2024 - Presente</div>
-                <p className="text-sm text-white/50 leading-relaxed font-light mt-4">
-                  Atuando no desenvolvimento de sistemas complexos com PHP (Laravel/Zend), processamento via filas (Redis), e integrações de APIs REST/SOAP. Especialista na otimização de e-commerces (OpenMage) e sistemas de logística.
-                </p>
-              </div>
-            </motion.div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+            className="hidden lg:block mt-20 space-y-6 pt-12 border-t border-white/10"
+          >
+            <div className="flex items-center gap-4">
+              <span className="w-2 h-2 bg-neon animate-pulse" />
+              <span className="text-[10px] uppercase text-white/40 tracking-widest">Foco Atual</span>
+            </div>
+            <p className="text-highlight-texture text-xl uppercase transition-all duration-300">
+              Especialista em <span className="text-highlight-texture-neon">Desenvolvimento Web</span>
+            </p>
+            <div className="flex items-center gap-2 mt-4">
+              <span className="font-mono text-[10px] text-white/20 uppercase tracking-widest">_System_Operational_Confidence: 99%</span>
+            </div>
+          </motion.div>
+        </div>
 
-            {/* Section: Base Operation (Last on right column) */}
-            <motion.div 
-              whileHover={{ x: 10 }}
-              className="space-y-6 transition-transform"
-            >
-              <span className="font-mono text-[10px] text-white/40 uppercase block tracking-widest">_Base_Operation</span>
-              <div className="text-lg font-mono text-white/80 leading-loose group">
-                <span className="text-neon group-hover:animate-pulse inline-block mr-4">{">"}</span>Localização: Guarapuava, Paraná, Brasil.<br/>
-                
-                <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3">
-                  <div className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-neon animate-pulse" />
-                    <span className="text-[10px] uppercase text-white/40 tracking-widest">Status Acadêmico</span>
-                  </div>
-                  <p className="text-xl md:text-2xl font-black uppercase text-white tracking-tighter">
-                    Graduado em <span className="text-neon">Engenharia de Software</span>
-                  </p>
-                  <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.2em]">Centro Univ. Campo Real | 2022 — 2025</span>
-                </div>
-              </div>
-            </motion.div>
+        {/* Right Column: Execution History (Stacked Scrolling Experiences) */}
+        <div className="w-full lg:w-1/2 flex flex-col bg-line/5 relative">
+          <div className="absolute top-8 left-8 lg:left-16 z-20">
+            <span className="font-mono text-[10px] text-white/40 uppercase block tracking-widest">_Execution_History</span>
           </div>
-        </motion.div>
+          
+          <div className="flex flex-col">
+            {experiences.map((exp, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20%" }}
+                className="py-12 lg:py-24 px-8 lg:px-20 border-b border-line/30 last:border-b-0 relative group"
+              >
+                <div className="absolute inset-0 tech-grid opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity" />
+                
+                <div className="relative z-10 space-y-8">
+                  <div className="flex flex-col gap-4">
+                    <span className="w-fit font-mono text-[10px] text-neon border border-neon/30 px-3 py-1 tracking-widest">
+                      {exp.status}
+                    </span>
+                    <h3 className="text-highlight-texture text-4xl sm:text-5xl uppercase leading-[0.85] transition-all duration-300">
+                      {exp.role}
+                    </h3>
+                  </div>
+                  
+                  <div className="flex flex-col gap-1 font-mono text-xs text-neon/70 bg-neon/5 p-4 border-l-2 border-neon">
+                    <span className="text-lg text-white font-bold tracking-tight">{exp.company}</span>
+                    <span className="tracking-[0.2em]">{exp.period}</span>
+                  </div>
+
+                  <p className="text-lg text-white/50 leading-relaxed font-light max-w-lg">
+                    {exp.description}
+                  </p>
+
+                  <div className="pt-8 flex items-center gap-4 text-[10px] font-mono text-white/20 uppercase tracking-widest">
+                    <span className="h-px w-8 bg-white/10" />
+                    <span>Phase: {idx + 1}</span>
+                    <span className="h-px flex-1 bg-white/10" />
+                    <ChevronRight size={10} className="text-neon/30" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

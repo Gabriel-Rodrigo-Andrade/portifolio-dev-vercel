@@ -16,7 +16,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-[70vh] flex flex-col border-x border-b border-line max-w-[1600px] mx-auto overflow-hidden">
+    <section id="home" className="relative min-h-[80vh] flex flex-col border-x border-b border-line max-w-[1600px] mx-auto overflow-hidden pt-20">
       <div className="absolute inset-0 tech-grid opacity-50 pointer-events-none" />
       <div className="scanlines absolute inset-0 -z-10" />
 
@@ -25,12 +25,12 @@ export default function Hero() {
           <motion.div variants={containerVars} initial="hidden" animate="visible" className="max-w-6xl mx-auto w-full">
             <motion.div variants={itemVars} className="flex items-center justify-center gap-3 mb-6">
               <span className="h-px w-8 bg-neon/30" />
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.4em] text-neon">Vitor Henrique P.</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.4em] text-neon">Gabriel Andrade</span>
               <span className="h-px w-8 bg-neon/30" />
             </motion.div>
-            <motion.h1 variants={itemVars} className="text-crt text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[1] tracking-tighter uppercase mb-6 flex flex-col items-center">
+            <motion.h1 variants={itemVars} className="hero-title mb-6 flex flex-col items-center">
               <span className="whitespace-nowrap inline-block">
-                Building <span className="text-neon relative inline-block px-2">
+                Building <span className="hero-title-highlight relative inline-block px-2">
                   Systems
                   <motion.div 
                     className="absolute inset-0 bg-neon mix-blend-difference z-10 pointer-events-none"
@@ -39,10 +39,10 @@ export default function Hero() {
                   />
                 </span>
               </span>
-              <span className="text-white/90">not pages.</span>
+              <span>not pages.</span>
             </motion.h1>
             <motion.p variants={itemVars} className="max-w-xl mx-auto text-lg text-white/50 font-light leading-relaxed mb-10">
-              Engenheiro de Software focado em sistemas escaláveis. Especialista em <span className="text-white">PHP (Laravel & Zend)</span>, Vue.js e arquiteturas robustas de backend. Baseado em Guarapuava, focado no mundo.
+              <span className="text-highlight-texture-neon uppercase inline-block">Desenvolvedor Full Stack</span> apaixonado por transformar café em código eficiente. Especialista em <span className="text-white">PHP (Laravel)</span>, Vue.js e WordPress. Focado em criar soluções robustas e modernas.
             </motion.p>
             
             <motion.div variants={itemVars} className="flex flex-wrap gap-4 justify-center">

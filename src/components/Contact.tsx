@@ -25,9 +25,9 @@ export default function Contact() {
         >
           <div className="flex-1 p-8 md:p-16 space-y-12">
             <div>
-              <h3 className="text-crt text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+              <h3 className="text-highlight-texture text-4xl md:text-6xl uppercase leading-[0.9] mb-8 transition-all duration-300">
                 Request <br />
-                <span className="text-neon">Connection.</span>
+                <span className="text-highlight-texture-neon">Connection.</span>
               </h3>
               <p className="text-sm font-mono text-white/40 font-light leading-relaxed max-w-md">
                 Pronto para transformar requisitos complexos em arquitetura robusta. Inicie uma nova instância ou apenas troque pacotes de ideias.
@@ -35,21 +35,21 @@ export default function Contact() {
             </div>
 
             <div className="space-y-4">
-              <a href="mailto:contato@devporto.com" className="flex items-center justify-between p-6 brutal-card group relative overflow-hidden">
+              <a href="mailto:gabrielandrade0472@gmail.com" className="flex items-center justify-between p-6 brutal-card group relative overflow-hidden">
                 <div className="absolute inset-0 bg-neon/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
                 <div className="flex items-center gap-4 relative z-10">
                   <Mail size={16} className="text-white/20 group-hover:text-neon transition-colors" />
-                  <span className="font-mono text-sm uppercase tracking-tight group-hover:text-neon transition-colors">contato@devporto.com</span>
+                  <span className="font-mono text-sm uppercase tracking-tight group-hover:text-neon transition-colors">gabrielandrade0472@gmail.com</span>
                 </div>
                 <ChevronRight size={14} className="text-white/20 group-hover:translate-x-1 group-hover:text-neon transition-all relative z-10" />
               </a>
               <div className="flex gap-4">
-                <a href="https://github.com" className="flex-1 p-6 brutal-card flex items-center justify-center gap-3 group relative overflow-hidden">
+                <a href="https://github.com/Gabriel-Rodrigo-Andrade" target="_blank" rel="noreferrer" className="flex-1 p-6 brutal-card flex items-center justify-center gap-3 group relative overflow-hidden">
                   <div className="absolute inset-0 bg-neon/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                   <Github size={16} className="text-white/20 group-hover:text-neon transition-colors relative z-10" />
                   <span className="font-mono text-[10px] font-bold uppercase tracking-widest group-hover:text-neon transition-colors relative z-10">GITHUB_DB</span>
                 </a>
-                <a href="https://www.linkedin.com/in/vitorpachinski" className="flex-1 p-6 brutal-card flex items-center justify-center gap-3 group relative overflow-hidden">
+                <a href="https://www.linkedin.com/in/gabriel-andrade-dev" target="_blank" rel="noreferrer" className="flex-1 p-6 brutal-card flex items-center justify-center gap-3 group relative overflow-hidden">
                   <div className="absolute inset-0 bg-neon/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                   <Linkedin size={16} className="text-white/20 group-hover:text-neon transition-colors relative z-10" />
                   <span className="font-mono text-[10px] font-bold uppercase tracking-widest group-hover:text-neon transition-colors relative z-10">LINKEDIN_ID</span>
@@ -72,7 +72,7 @@ export default function Contact() {
         >
           <form className="bg-line border border-line flex flex-col gap-px">
             <div className="bg-void p-6 space-y-3">
-              <label className="font-mono text-[9px] font-bold uppercase text-white/30 tracking-widest flex items-center gap-2">
+              <label className="font-mono text-[9px] font-bold uppercase text-white/70 tracking-widest flex items-center gap-2">
                 <Terminal size={10} className="text-neon" />
                 Input_Entity_Name
               </label>
@@ -83,7 +83,7 @@ export default function Contact() {
               />
             </div>
             <div className="bg-void p-6 space-y-3">
-              <label className="font-mono text-[9px] font-bold uppercase text-white/30 tracking-widest flex items-center gap-2">
+              <label className="font-mono text-[9px] font-bold uppercase text-white/70 tracking-widest flex items-center gap-2">
                 <Terminal size={10} className="text-neon" />
                 Input_Contact_ADDR
               </label>
@@ -94,7 +94,7 @@ export default function Contact() {
               />
             </div>
             <div className="bg-void p-6 space-y-3">
-              <label className="font-mono text-[9px] font-bold uppercase text-white/30 tracking-widest flex items-center gap-2">
+              <label className="font-mono text-[9px] font-bold uppercase text-white/70 tracking-widest flex items-center gap-2">
                 <Terminal size={10} className="text-neon" />
                 Input_Payload_Description
               </label>

@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 text-neon">
             <Cpu size={14} />
-            <span className="font-bold tracking-tighter">VITOR_H_P.</span>
+            <span className="font-bold tracking-tighter">GABRIEL_ANDRADE.</span>
           </div>
           <div className="hidden lg:flex items-center gap-1 text-white/40">
             <span className="w-1.5 h-1.5 rounded-full bg-neon animate-pulse" />
@@ -54,10 +54,10 @@ export default function Navbar() {
             {time}
           </div>
           <div className="flex items-center gap-4 border-l border-line pl-6">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="text-white/40 hover:text-neon transition-colors">
+            <a href="https://github.com/Gabriel-Rodrigo-Andrade" target="_blank" rel="noreferrer" className="text-white/40 hover:text-neon transition-colors">
               <Github size={16} />
             </a>
-            <a href="https://www.linkedin.com/in/vitorpachinski" target="_blank" rel="noreferrer" className="text-white/40 hover:text-neon transition-colors">
+            <a href="https://www.linkedin.com/in/gabriel-andrade-dev" target="_blank" rel="noreferrer" className="text-white/40 hover:text-neon transition-colors">
               <Linkedin size={16} />
             </a>
           </div>
